@@ -49,7 +49,7 @@ export default function BlogPostClient({ slug, post }: BlogPostClientProps) {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

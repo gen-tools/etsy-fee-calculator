@@ -58,7 +58,7 @@ export default function BlogPostPage({ slug, setRoute }: BlogPostPageProps) {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

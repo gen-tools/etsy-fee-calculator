@@ -36,7 +36,7 @@ export default function CookieConsent() {
     >
       <div className="flex items-start space-x-3.5">
         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-orange-500/10 text-orange-400">
-          <ShieldCheck className="h-5 w-5" />
+          <ShieldCheck className="h-5 w-5" aria-hidden="true" />
         </div>
         <div className="flex-1 min-w-0">
           <h4 className="text-sm font-semibold font-display text-white">We Respect Your Privacy</h4>
@@ -65,7 +65,7 @@ export default function CookieConsent() {
           className="text-slate-500 hover:text-white transition-colors duration-150 shrink-0"
           aria-label="Close Consent Banner"
         >
-          <X className="h-4 w-4" />
+          <X className="h-4 w-4" aria-hidden="true" />
         </button>
       </div>
     </div>

@@ -67,9 +67,9 @@ export default function FAQAccordion({ items, title, subtitle }: FAQAccordionPro
                   <span className="font-display text-base tracking-tight">{item.question}</span>
                   <span className="ml-4 flex h-6 w-6 items-center justify-center rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-500 group-hover:text-slate-700">
                     {isOpen ? (
-                      <ChevronUp className="h-4 w-4 text-orange-500" />
+                      <ChevronUp className="h-4 w-4 text-orange-500" aria-hidden="true" />
                     ) : (
-                      <ChevronDown className="h-4 w-4" />
+                      <ChevronDown className="h-4 w-4" aria-hidden="true" />
                     )}
                   </span>
                 </button>

@@ -330,7 +330,7 @@ Calculated via EtsyFeeCalc - Ultimate Calculator
           <div className="bg-slate-50 dark:bg-slate-950 rounded-2xl p-4 border border-slate-100 dark:border-slate-900">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                <label htmlFor="calc-input-location" className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
                   <span>Shop Location / Region</span>
                   <button 
                     type="button" 
@@ -361,7 +361,7 @@ Calculated via EtsyFeeCalc - Ultimate Calculator
               </div>
 
               <div>
-                <label className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                <label htmlFor="calc-input-currency" className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
                   <span>Listing Currency</span>
                 </label>
                 <select
@@ -389,7 +389,7 @@ Calculated via EtsyFeeCalc - Ultimate Calculator
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Product Price */}
               <div>
-                <label className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                <label htmlFor="calc-input-price" className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                   <span>Product List Price</span>
                   <button 
                     type="button" 
@@ -424,7 +424,7 @@ Calculated via EtsyFeeCalc - Ultimate Calculator
 
               {/* Material / Item Cost */}
               <div>
-                <label className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                <label htmlFor="calc-input-material" className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                   <span>Material Cost per Item</span>
                   <button 
                     type="button" 
@@ -459,7 +459,7 @@ Calculated via EtsyFeeCalc - Ultimate Calculator
 
               {/* Quantity */}
               <div>
-                <label className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                <label htmlFor="calc-input-quantity" className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                   <span>Quantity Sold</span>
                   <button 
                     type="button" 
@@ -489,7 +489,7 @@ Calculated via EtsyFeeCalc - Ultimate Calculator
 
               {/* Discount Section */}
               <div>
-                <label className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                <label htmlFor="calc-input-discount-value" className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                   <span>Coupon or Discount</span>
                   <button 
                     type="button" 
@@ -544,7 +544,7 @@ Calculated via EtsyFeeCalc - Ultimate Calculator
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Shipping Charged */}
               <div>
-                <label className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                <label htmlFor="calc-input-shipping-charged" className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                   <span>Shipping Charged (to Buyer)</span>
                   <button 
                     type="button" 
@@ -579,7 +579,7 @@ Calculated via EtsyFeeCalc - Ultimate Calculator
 
               {/* Shipping Cost */}
               <div>
-                <label className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                <label htmlFor="calc-input-shipping-cost" className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                   <span>Shipping Cost (Your Expense)</span>
                   <button 
                     type="button" 
@@ -628,7 +628,7 @@ Calculated via EtsyFeeCalc - Ultimate Calculator
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {/* Listing Fee */}
               <div>
-                <label className="flex items-center gap-1 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                <label htmlFor="calc-input-listing-fee" className="flex items-center gap-1 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                   <span>Listing Fee</span>
                   <button 
                     type="button" 
@@ -662,7 +662,7 @@ Calculated via EtsyFeeCalc - Ultimate Calculator
 
               {/* Transaction Fee % */}
               <div>
-                <label className="flex items-center gap-1 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                <label htmlFor="calc-input-transaction-fee-percent" className="flex items-center gap-1 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                   <span>Transaction %</span>
                   <button 
                     type="button" 
@@ -696,7 +696,7 @@ Calculated via EtsyFeeCalc - Ultimate Calculator
 
               {/* Sales Tax Estimated % */}
               <div>
-                <label className="flex items-center gap-1 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                <label htmlFor="calc-input-tax-percent" className="flex items-center gap-1 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                   <span>Sales Tax/VAT %</span>
                   <button 
                     type="button" 
@@ -732,7 +732,7 @@ Calculated via EtsyFeeCalc - Ultimate Calculator
             {/* Payment Processor Rates */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
               <div>
-                <label className="flex items-center gap-1 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                <label htmlFor="calc-input-processing-percent" className="flex items-center gap-1 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                   <span>Card Processing Percent</span>
                   <button 
                     type="button" 
@@ -765,7 +765,7 @@ Calculated via EtsyFeeCalc - Ultimate Calculator
               </div>
 
               <div>
-                <label className="flex items-center gap-1 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                <label htmlFor="calc-input-processing-fixed" className="flex items-center gap-1 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                   <span>Card Processing Fixed Fee</span>
                   <button 
                     type="button" 
@@ -800,7 +800,7 @@ Calculated via EtsyFeeCalc - Ultimate Calculator
 
             {/* Offsite Advertising Program */}
             <div className="mt-4">
-              <label className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+              <label htmlFor="calc-input-offsite-ads" className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                 <span>Etsy Offsite Ads Campaign</span>
                 <button 
                   type="button" 
