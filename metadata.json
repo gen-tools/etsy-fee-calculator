@@ -1,0 +1,6 @@
+{
+  "name": "Etsy Fee Calculator 2026 | Calculate Etsy Fees & Profit",
+  "description": "Calculate Etsy fees, profit, and seller earnings instantly. Estimate listing, transaction, payment processing, shipping, and digital product fees for free.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
