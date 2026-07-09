@@ -92,7 +92,7 @@ export default function PrivacyPolicyPage() {
             <li><strong>Right to Opt Out:</strong> Instruct us to stop processing analytics or ad targeting flags immediately.</li>
           </ul>
           <p>
-            To activate any of these privacy safeguards, please transmit a digital request to our chief data protection officer at <strong>privacy@etsyfeecalc.com</strong>.
+            To activate any of these privacy safeguards, please transmit a digital request to our chief data protection officer at <strong>support@etsy-fee-calculator-c.vercel.app</strong>.
           </p>
         </section>
 
@@ -111,7 +111,7 @@ export default function PrivacyPolicyPage() {
           <div className="bg-slate-50 dark:bg-slate-950 p-5 rounded-2xl border border-slate-100 dark:border-slate-900 font-sans text-xs space-y-2 mt-4">
             <div className="flex items-center space-x-2">
               <Mail className="h-4 w-4 text-orange-500" />
-              <span>privacy@etsyfeecalc.com</span>
+              <span>support@etsy-fee-calculator-c.vercel.app</span>
             </div>
             <div className="flex items-center space-x-2">
               <MapPin className="h-4 w-4 text-orange-500" />

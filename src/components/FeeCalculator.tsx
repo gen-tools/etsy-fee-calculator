@@ -15,31 +15,31 @@ import {
   TrendingUp, TrendingDown, Award, Calculator, FileSpreadsheet
 } from 'lucide-react';
 
+const DEFAULT_INPUTS: CalculatorInputs & { materialCost: number } = {
+  productPrice: 35.00,
+  shippingCharged: 5.00,
+  shippingCost: 4.20,
+  quantity: 1,
+  discountType: 'percentage',
+  discountValue: 0,
+  listingFee: 0.20,
+  transactionFeePercent: 6.5,
+  paymentProcessingPercent: 3.0,
+  paymentProcessingFixed: 0.25,
+  offsiteAdsPercent: 0,
+  currency: 'USD',
+  location: 'US',
+  taxPercent: 0,
+  materialCost: 8.50,
+};
+
 interface FeeCalculatorProps {
   initialRegionCode?: string;
 }
 
 export default function FeeCalculator({ initialRegionCode = 'US' }: FeeCalculatorProps) {
   // 1. Initial State Definition
-  const defaultInputs: CalculatorInputs & { materialCost: number } = {
-    productPrice: 35.00,
-    shippingCharged: 5.00,
-    shippingCost: 4.20,
-    quantity: 1,
-    discountType: 'percentage',
-    discountValue: 0,
-    listingFee: 0.20,
-    transactionFeePercent: 6.5,
-    paymentProcessingPercent: 3.0,
-    paymentProcessingFixed: 0.25,
-    offsiteAdsPercent: 0,
-    currency: 'USD',
-    location: 'US',
-    taxPercent: 0,
-    materialCost: 8.50,
-  };
-
-  const [inputs, setInputs] = useState(defaultInputs);
+  const [inputs, setInputs] = useState(DEFAULT_INPUTS);
   const [outputs, setOutputs] = useState<CalculatorOutputs | null>(null);
   const [hasCalculated, setHasCalculated] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -52,21 +52,21 @@ export default function FeeCalculator({ initialRegionCode = 'US' }: FeeCalculato
       const params = new URLSearchParams(window.location.search);
       if (params.has('price')) {
         const urlInputs = {
-          productPrice: Number(params.get('price')) || defaultInputs.productPrice,
-          shippingCharged: Number(params.get('shipping_charged')) || defaultInputs.shippingCharged,
-          shippingCost: Number(params.get('shipping_cost')) || defaultInputs.shippingCost,
-          quantity: Number(params.get('qty')) || defaultInputs.quantity,
-          discountType: (params.get('discount_type') as 'percentage' | 'fixed') || defaultInputs.discountType,
-          discountValue: Number(params.get('discount')) || defaultInputs.discountValue,
-          listingFee: Number(params.get('listing')) || defaultInputs.listingFee,
-          transactionFeePercent: Number(params.get('tx_percent')) || defaultInputs.transactionFeePercent,
-          paymentProcessingPercent: Number(params.get('pay_percent')) || defaultInputs.paymentProcessingPercent,
-          paymentProcessingFixed: Number(params.get('pay_fixed')) || defaultInputs.paymentProcessingFixed,
-          offsiteAdsPercent: Number(params.get('ads')) || defaultInputs.offsiteAdsPercent,
-          currency: params.get('currency') || defaultInputs.currency,
-          location: params.get('location') || defaultInputs.location,
-          taxPercent: Number(params.get('tax')) || defaultInputs.taxPercent,
-          materialCost: Number(params.get('material')) || defaultInputs.materialCost,
+          productPrice: Number(params.get('price')) || DEFAULT_INPUTS.productPrice,
+          shippingCharged: Number(params.get('shipping_charged')) || DEFAULT_INPUTS.shippingCharged,
+          shippingCost: Number(params.get('shipping_cost')) || DEFAULT_INPUTS.shippingCost,
+          quantity: Number(params.get('qty')) || DEFAULT_INPUTS.quantity,
+          discountType: (params.get('discount_type') as 'percentage' | 'fixed') || DEFAULT_INPUTS.discountType,
+          discountValue: Number(params.get('discount')) || DEFAULT_INPUTS.discountValue,
+          listingFee: Number(params.get('listing')) || DEFAULT_INPUTS.listingFee,
+          transactionFeePercent: Number(params.get('tx_percent')) || DEFAULT_INPUTS.transactionFeePercent,
+          paymentProcessingPercent: Number(params.get('pay_percent')) || DEFAULT_INPUTS.paymentProcessingPercent,
+          paymentProcessingFixed: Number(params.get('pay_fixed')) || DEFAULT_INPUTS.paymentProcessingFixed,
+          offsiteAdsPercent: Number(params.get('ads')) || DEFAULT_INPUTS.offsiteAdsPercent,
+          currency: params.get('currency') || DEFAULT_INPUTS.currency,
+          location: params.get('location') || DEFAULT_INPUTS.location,
+          taxPercent: Number(params.get('tax')) || DEFAULT_INPUTS.taxPercent,
+          materialCost: Number(params.get('material')) || DEFAULT_INPUTS.materialCost,
         };
         setInputs(urlInputs);
         setOutputs(calculateEtsyFees(urlInputs));
@@ -74,7 +74,7 @@ export default function FeeCalculator({ initialRegionCode = 'US' }: FeeCalculato
       } else if (initialRegionCode && REGIONS[initialRegionCode]) {
         const config = REGIONS[initialRegionCode];
         const loadedInputs = {
-          ...defaultInputs,
+          ...DEFAULT_INPUTS,
           location: initialRegionCode,
           currency: config.currency,
           listingFee: config.listingFee,
@@ -86,7 +86,7 @@ export default function FeeCalculator({ initialRegionCode = 'US' }: FeeCalculato
         setOutputs(calculateEtsyFees(loadedInputs));
         setHasCalculated(true);
       } else {
-        setOutputs(calculateEtsyFees(defaultInputs));
+        setOutputs(calculateEtsyFees(DEFAULT_INPUTS));
         setHasCalculated(true);
       }
     } catch (e) {
@@ -129,11 +129,11 @@ export default function FeeCalculator({ initialRegionCode = 'US' }: FeeCalculato
 
   // 6. Reset Form
   const handleReset = () => {
-    setInputs(defaultInputs);
-    if (REGIONS[defaultInputs.location]) {
-      const config = REGIONS[defaultInputs.location];
+    setInputs(DEFAULT_INPUTS);
+    if (REGIONS[DEFAULT_INPUTS.location]) {
+      const config = REGIONS[DEFAULT_INPUTS.location];
       setInputs({
-        ...defaultInputs,
+        ...DEFAULT_INPUTS,
         currency: config.currency,
         listingFee: config.listingFee,
         transactionFeePercent: config.transactionFee,

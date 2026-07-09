@@ -131,7 +131,7 @@ export default function Footer({ currentRoute }: FooterProps) {
 
         <div className="mt-12 border-t border-slate-800 pt-8 flex flex-col md:flex-row md:items-center md:justify-between text-xs">
           <p className="text-slate-500">
-            &copy; {new Date().getFullYear()} EtsyFeeCalculator. All rights reserved. This utility is an independent calculation tool and is not officially affiliated with or endorsed by Etsy, Inc.
+            &copy; {new Date().getFullYear()} EtsyFeeCalculator. All rights reserved. Developed by <a href="https://github.com/gen-tools" target="_blank" rel="noopener noreferrer" className="hover:text-orange-400 underline decoration-dotted transition-colors duration-150">Sheztech</a>
           </p>
           <div className="mt-4 md:mt-0 flex items-center space-x-1 text-slate-400">
             <ShieldCheck className="h-4 w-4 text-emerald-500" />
